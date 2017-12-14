@@ -1,0 +1,65 @@
+{include file="public/base" title="轮播列表" file_name="slider" /}
+<h3>
+    <i class="icon-play-circle"></i>&nbsp;轮播列表
+</h3>
+<ol class="breadcrumb">
+    <li><a href="{:url('Index/index')}"><i class="icon-home"></i>&nbsp;首页</a></li>
+    <li class="active"><i class="icon-play-circle"></i>&nbsp;轮播列表</li>
+</ol>
+<!-- 表格类页面 start -->
+<div class="content table-responsive list">
+    <div class="oper">
+        <a class="btn refresh" href="javascript:void(0);"><i class="icon-repeat"></i> 刷新</a>
+        <a class="btn" href='{:url("Slider/edit_slider")}'><i class="icon-plus"></i> 添加</a>
+        <a class="btn trash" href="javascript:void(0);"><i class="icon-trash"></i> 删除</a>
+    </div>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr class="active">
+                <th><input type="checkbox" name="select_all"></th>
+                <th>编号</th>
+                <th>背景图片</th>
+                <th>渐入图片</th>
+                <th>大标题</th>
+                <th>小标题</th>
+                <th>排序</th>
+                <th>更新时间</th>
+                <th>创建时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {volist name="list" id="slider" empty="$empty"}
+            <tr>
+                <td><input type="checkbox" name="select_id" value="{$slider.id}"></td>
+                <td>{$i}</td>
+                <td><img src="{$slider.backpic_path}" height="50px"></td>
+                <td><img src="{$slider.pic_path}" height="50px"></td>
+                <td>{$slider.big_title}</td>
+                <td>{$slider.small_title}</td>
+                <td>{$slider.sort}</td>
+                <td>{$slider.update_time}</td>
+                <td>{$slider.create_time}</td>
+                <td><a href='{:url("Slider/edit_slider","slider_id=".$slider.id)}'>编辑</a></td>
+            </tr>
+            {/volist}
+        </tbody>
+        <thead>
+            <tr class="active">
+                <th><input type="checkbox" name="select_all"></th>
+                <th>编号</th>
+                <th>背景图片</th>
+                <th>渐入图片</th>
+                <th>大标题</th>
+                <th>小标题</th>
+                <th>排序</th>
+                <th>更新时间</th>
+                <th>创建时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+    </table>
+    {$list->render()}
+</div>
+<!-- 表格类页面 end -->
+{include file="public/footer" /}

@@ -1,0 +1,64 @@
+{include file="public/base" style="" /}
+<div class="main fade out">
+	<div class="Dm_news_con">
+		<div class="news-menu">
+            <nav>
+                <ul id="filters1">
+                    <li><a href="{:url('/news_c')}" class="{eq name="$info.category_id" value="0"}active {/eq}trans">全部资讯</a></li>
+                    {volist name="category_list" id="category"}
+                    <li>
+                        <a href="{:url('/news_c'.$category.id)}" class="{eq name="$info.category_id" value="$category.id"}active {/eq}trans" >{$category.name}</a>
+                    </li>               
+                    {/volist}
+                </ul>
+            </nav>
+		</div>
+		<div class="news_titles">
+			<h1>{$info.title}</h1>
+			<div class="p">
+				<span>发布时间：{$info.create_time}</span>
+                <span>编辑发布：{$info.author}</span>
+				<span>浏览量：{$info.view_num}</span>
+			</div>
+		</div>
+		<div class="newContent">
+           {$info.content}
+            <p><br/></p>
+            <p><br/></p>
+            <div class="newsshare">
+                <span>分享至：</span><div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+            </div>
+        </div>
+        <div class="relatedList clearfix">
+            <h3>相关资讯</h3>
+            <ul class="news_other">
+                {volist name="article_about" id="about"}
+                <li>
+                    <a href="{:url('/news_detail_1'.$about.id)}" >
+                        <div class="imgs"><img src="{$about.pic_path}" ></div>
+                        <div class="texts">
+                            <h5>{$about.title}</h5>
+                            <span>{$about.create_time}</span>
+                            <p class="ui-nowrap2">{$about.description}</p>
+                        </div>
+                    </a>
+                </li>
+                {/volist}
+            </ul>
+        </div>	
+    </div>
+</div>
+<div class="menuWeel1">
+    {notempty name="$previous_id"}
+    <a href="{:url('/new_detail_1'.$previous_id)}" class="butLeft"><i class="icon iconfont" style="font-size:18px;">&#xe509;</i></a>
+    {/notempty}
+    <a href="{:url('/news_c')}" class="works_more">&#xe630;</a>
+    {notempty name="$next_id"}
+    <a href="{:url('/new_detail_1'.$next_id)}" class="butRight"><i class="icon iconfont" style="font-size:18px;">&#xe654;</i></a>
+    {/notempty}
+</div>
+{include file="public/inter" /}
+{include file="public/footer" /}
+<script src="/static/h/js/public.js"></script>
+</body>
+</html>

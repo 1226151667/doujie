@@ -1,0 +1,56 @@
+{include file="public/base" title="合作客户" file_name="customer" /}
+<h3>
+    <i class="icon-group"></i>&nbsp;合作客户
+</h3>
+<ol class="breadcrumb">
+    <li><a href="{:url('Index/index')}"><i class="icon-home"></i>&nbsp;首页</a></li>
+    <li class="active"><i class="icon-group"></i>&nbsp;合作客户</li>
+</ol>
+<!-- 表格类页面 start -->
+<div class="content table-responsive list">
+    <div class="oper">
+        <a class="btn refresh" href="javascript:void(0);"><i class="icon-repeat"></i> 刷新</a>
+        <a class="btn" href='{:url("Cases/edit_customer")}'><i class="icon-plus"></i> 添加</a>
+        <a class="btn trash" href="javascript:void(0);"><i class="icon-trash"></i> 删除</a>
+    </div>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr class="active">
+                <th><input type="checkbox" name="select_all"></th>
+                <th>编号</th>
+                <th>客户名称</th>
+                <th>客户logo</th>
+                <th>更新时间</th>
+                <th>创建时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {volist name="list" id="customer" empty="$empty"}
+            <tr>
+                <td><input type="checkbox" name="select_id" value="{$customer.id}"></td>
+                <td>{$i}</td>
+                <td>{$customer.name}</td>
+                <td><img src="{$customer.logo_path}" height="50px"></td>
+                <td>{$customer.update_time}</td>
+                <td>{$customer.create_time}</td>
+                <td><a href='{:url("Cases/edit_customer","customer_id=".$customer.id)}'>编辑</a></td>
+            </tr>
+            {/volist}
+        </tbody>
+        <thead>
+            <tr class="active">
+                <th><input type="checkbox" name="select_all"></th>
+                <th>编号</th>
+                <th>客户名称</th>
+                <th>客户logo</th>
+                <th>更新时间</th>
+                <th>创建时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+    </table>
+    {$list->render()}
+</div>
+<!-- 表格类页面 end -->
+{include file="public/footer" /}

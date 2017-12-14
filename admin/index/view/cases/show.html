@@ -1,0 +1,91 @@
+{include file="public/base" title="$page_title" file_name="cases" /}
+<h3>
+    {switch name="type" }
+        {case value="web"}<i class="icon-laptop"></i>&nbsp;网站开发{/case}
+        {case value="wx"}<i class="icon-comments"></i>&nbsp;微信定制{/case}
+        {case value="app"}<i class="icon-mobile-phone"></i>&nbsp;APP应用{/case}
+    {/switch}
+</h3>
+<ol class="breadcrumb">
+    <li><a href="{:url('Index/index')}"><i class="icon-home"></i>&nbsp;首页</a></li>
+    {switch name="type" }
+        {case value="web"}<li class="active"><i class="icon-laptop"></i>&nbsp;网站开发</li>{/case}
+        {case value="wx"}<li class="active"><i class="icon-comments"></i>&nbsp;微信定制</li>{/case}
+        {case value="app"}<li class="active"><i class="icon-mobile-phone"></i>&nbsp;APP应用</li>{/case}
+    {/switch}
+</ol>
+<!-- 表格类页面 start -->
+<div class="content table-responsive list">
+    <div class="oper">
+        <a class="btn refresh" href="javascript:void(0);"><i class="icon-repeat"></i> 刷新</a>
+        <a class="btn" href='{:url("Cases/edit_cases","type=".$type)}'><i class="icon-plus"></i> 添加</a>
+        <a class="btn trash" href="javascript:void(0);"><i class="icon-trash"></i> 删除</a>
+    </div>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr class="active">
+                <th><input type="checkbox" name="select_all"></th>
+                <th>编号</th>
+                <th>名称</th>
+                <th>开始颜色</th>
+                <th>结束颜色</th>
+                <th>海报图</th>
+                <th>730*730图</th>
+                <th>730*1004图</th>
+                {eq name="type" value="web"}
+                <th>链接</th>
+                {else/}
+                <th>二维码</th>
+                {/eq}
+                <th>更新时间</th>
+                <th>创建时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {volist name="list" id="cases" empty="$empty"}
+            <tr>
+                <td><input type="checkbox" name="select_id" value="{$cases.id}"></td>
+                <td>{$i}</td>
+                <td>{$cases.name}</td>
+                <td>{$cases.bg_start}</td>
+                <td>{$cases.bg_end}</td>
+                <td><img src="{$cases.pic_path}" height="50px"></td>
+                <td><img src="{$cases.w730h730pic_path}" height="50px"></td>
+                <td><img src="{$cases.w730h1004pic_path}" height="50px"></td>
+                {eq name="type" value="web"}
+                <td><a href="{$cases.link}" target="_blank">浏览</a></td>
+                {else/}
+                <td><img src="{$cases.ewm_path}" height="50px"></td>
+                {/eq}
+                <td>{$cases.update_time}</td>
+                <td>{$cases.create_time}</td>
+                <td><a href='{:url("Cases/edit_cases","type=".$type."&id=".$cases.id)}'>编辑</a></td>
+            </tr>
+            {/volist}
+        </tbody>
+        <thead>
+            <tr class="active">
+                <th><input type="checkbox" name="select_all"></th>
+                <th>编号</th>
+                <th>名称</th>
+                <th>开始颜色</th>
+                <th>结束颜色</th>
+                <th>海报图</th>
+                <th>730*730图</th>
+                <th>730*1004图</th>
+                {eq name="type" value="web"}
+                <th>链接</th>
+                {else/}
+                <th>二维码</th>
+                {/eq}
+                <th>更新时间</th>
+                <th>创建时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+    </table>
+    {$list->render()}
+</div>
+<!-- 表格类页面 end -->
+{include file="public/footer" /}

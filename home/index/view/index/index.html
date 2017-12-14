@@ -1,0 +1,230 @@
+﻿{include file="public/base" style="" /}
+<div class="main fade out">
+    <!-- banner -->
+    <div class="dm_banner">
+        <div class="swiper-container" id="swiper-container">
+            <div class="swiper-wrapper">
+                {volist name="slider_list" id="slider"}
+                    <div class="swiper-slide-bg3 swiper-slide" style="background:url({$slider.backpic_path}) left bottom no-repeat;">
+                        {gt name="$slider.pic_id" value="0"}
+                        <div class="bg banner_img2 ani" swiper-animate-effect="fadeInRight2" swiper-animate-duration="1.3s" swiper-animate-delay="0.3s">
+                            <img src="{$slider.pic_path}" alt="" />
+                        </div>
+                        {/gt}
+                        {if condition="($slider.big_title != '') OR ($slider.small_title != '') "}
+                        <div class="dm_purpose ani dm_purpose-color1" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.5s" swiper-animate-delay="0.3s">
+                            <h3>{$slider.big_title}</h3>
+                            <h6>{$slider.small_title}</h6>
+                        </div>
+                        {/if}
+                    </div>
+                {/volist}
+            </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination" id="swiper-pagination1"></div>
+    </div>
+</div>
+<!--banner end -->
+<div class="dm_black"></div>
+<div class="dm_cases">
+    <div class="grid clearfix">
+        <div class="grid-item">
+            {volist name="cases_list" id="cases" length="3"}                
+            <div class="grid_c grid-item{$i==1?1:2}" data-bg-start="{$cases.bg_start}" data-bg-end="{$cases.bg_end}">
+                <a href="case_detail.html">
+                    <div class="tile-content ui-center trans">
+                        <h2>{$cases.name}</h2>
+                        <span class="category">
+                            {switch name="cases.type"}
+                                {case value="web"}网站开发{/case}
+                                {case value="wx"}微信定制{/case}
+                                {case value="app"}APP应用{/case}
+                            {/switch}
+                        </span>
+                    </div>
+                    <div class="lazyImage right" data-src="{$i==1?$cases['w730h1004pic_path']:$cases['w730h730pic_path']}">
+                        <div class="overlay gradient"></div>
+                        <img class="move-img">
+                    </div>
+                </a>
+            </div>
+            {/volist}
+        </div>
+        <div class="grid-item">
+            {volist name="cases_list" id="cases" offset="3" length="3"}                
+            <div class="grid_c grid-item{$i==2?1:2}" data-bg-start="{$cases.bg_start}" data-bg-end="{$cases.bg_end}">
+                <a href="case_detail.html">
+                    <div class="tile-content ui-center trans">
+                        <h2>{$cases.name}</h2>
+                        <span class="category">
+                            {switch name="cases.type"}
+                                {case value="web"}网站开发{/case}
+                                {case value="wx"}微信定制{/case}
+                                {case value="app"}APP应用{/case}
+                            {/switch}
+                        </span>
+                    </div>
+                    <div class="lazyImage right" data-src="{$i==2?$cases['w730h1004pic_path']:$cases['w730h730pic_path']}">
+                        <div class="overlay gradient"></div>
+                        <img class="move-img">
+                    </div>
+                </a>
+            </div>
+            {/volist}
+        </div>
+        <div class="grid-item">
+            {volist name="cases_list" id="cases" offset="6" length="3"}                
+            <div class="grid_c grid-item{$i==1?1:2}" data-bg-start="{$cases.bg_start}" data-bg-end="{$cases.bg_end}">
+                <a href="case_detail.html">
+                    <div class="tile-content ui-center trans">
+                        <h2>{$cases.name}</h2>
+                        <span class="category">
+                            {switch name="cases.type"}
+                                {case value="web"}网站开发{/case}
+                                {case value="wx"}微信定制{/case}
+                                {case value="app"}APP应用{/case}
+                            {/switch}
+                        </span>
+                    </div>
+                    <div class="lazyImage right" data-src="{$i==1?$cases['w730h1004pic_path']:$cases['w730h730pic_path']}">
+                        <div class="overlay gradient"></div>
+                        <img class="move-img">
+                    </div>
+                </a>
+            </div>
+            {/volist}
+        </div>
+        <div class="grid-item">
+            {volist name="cases_list" id="cases" offset="9" length="3"}                
+            <div class="grid_c grid-item{$i==3?1:2}" data-bg-start="{$cases.bg_start}" data-bg-end="{$cases.bg_end}">
+                <a href="case_detail.html">
+                    <div class="tile-content ui-center trans">
+                        <h2>{$cases.name}</h2>
+                        <span class="category">
+                            {switch name="cases.type"}
+                                {case value="web"}网站开发{/case}
+                                {case value="wx"}微信定制{/case}
+                                {case value="app"}APP应用{/case}
+                            {/switch}
+                        </span>
+                    </div>
+                    <div class="lazyImage right" data-src="{$i==3?$cases['w730h1004pic_path']:$cases['w730h730pic_path']}">
+                        <div class="overlay gradient"></div>
+                        <img class="move-img">
+                    </div>
+                </a>
+            </div>
+            {/volist}
+        </div>
+    </div>
+    <a href="{:url('/cases_t')}" class="more ">More</a>
+</div>
+<div class="dm_doWhat ">
+    <div class="dm_years clearfix ">
+        <ul>
+            <li style="background:rgba(97,164,255,.9) ">
+                <div class="number ">
+                    <span class="timer " data-to="3" data-speed="2500 ">0</span>年
+                </div>
+                <p>坚持创新设计</p>
+            </li>
+            <li style="background:rgba(97,164,255,.9) ">
+                <div class="number ">
+                    <span class="timer " data-to="120" data-speed="2500 ">0</span>+
+                </div>
+                <p>以用户体验为核心的项目</p>
+            </li>
+            <li style="background:rgba(97,164,255,.9) ">
+                <div class="number ">
+                    <span class="timer " data-to="200" data-speed="2500 ">0</span>+
+                </div>
+                <p>见证共赢的合作伙伴</p>
+            </li>
+            <li style="background:rgba(97,164,255,.9) ">
+                <div class="number ">
+                    <span class="timer" data-to="600" data-speed="2500 ">0</span>+
+                </div>
+                <p>来自业界和合作伙伴的好评</p>
+            </li>
+        </ul>
+    </div>
+    <!-- <div class="dm_video"><img src="/static/h/images/index/b.jpg" alt="" /></div> -->
+    <div class="dm_video noscroll-bg" style="background-image:url(/static/h/images/indexbg.png);">
+        <h3>以创新的用户体验设计帮助企业创造更大的商业价值</h3>
+        <a href="{:url('/about')}">了解斗捷</a>
+    </div>
+</div>
+
+<div class="dm_news clearfix">
+    <h3>NEWS</h3>
+    <h6>了解时势动态、开拓新视野，小小的阅读，大大的收获。</h6>
+    <div class="news_list">
+        <ul>
+            {volist name="article_list" id="new"}
+            <li>
+                <a href="{:url('/new_detail_1'.$new.id)}">
+                    <div class="img1">
+                        <img src="{$new.pic_path}" alt="" class="trans">
+                        <div class="date">
+                            <span>{$new.create_y}-{$new.create_m}</span>{$new.create_d}                                   
+                        </div>
+                    </div>
+                    <div class="info">
+                        <h3 class="ui-nowrap">{$new.title}</h3>
+                        <p class="ui-nowrap2">{$new.description}</p>
+                    </div>
+                </a>
+            </li>
+            {/volist}
+        </ul>
+        <div class="clear"></div>
+        <a href="{:url('/news_c')}" class="more">More</a>
+    </div>
+</div>
+
+
+<div class="dm_partner ">
+    <h3>CUSTOMERS</h3>
+    <h6>合作共赢，众所周知，合作不仅是一种积极向上的心态，更是一种智慧</h6>
+    <div class="swiper-container swiper-container-horizontal swiper-container-multirow" id="swiper-container3">
+        <div class="swiper-wrapper">
+            {volist name="customer_list" id="customer"}
+            <div class="swiper-slide" style="margin-right: 10px; {$i%2==1?='margin-top: 10px;'}">
+                <img src="{$customer.logo_path}" alt="{$customer.name}" title="{$customer.name}" class="ui-center">
+            </div>
+            {/volist}
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets" id="swiper-pagination4">
+            <span class="swiper-pagination-bullet"></span>
+            <span class="swiper-pagination-bullet"></span>
+            <span class="swiper-pagination-bullet"></span>
+            <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+        </div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-prev swiper-button-white"></div>
+        <div class="swiper-button-next swiper-button-white swiper-button-disabled"></div>
+    </div>
+</div>
+
+{include file="public/inter" /}
+{include file="public/footer" /}
+
+<script src="/static/h/js/public.js"></script>
+</body>
+<!-- js -->
+
+<script src="/static/h/js/swiper.min.js" ></script>
+<script src="/static/h/js/packery.pkgd.min.js"></script>
+<script src="/static/h/js/swiper.animate1.0.2.min.js" ></script>
+<script src="/static/h/js/jquery.countTo.js" ></script>
+<script src="/static/h/js/index.js" ></script>
+<script>
+    /*$(function(){
+
+        $(".grid img").loadImg();
+        $(".happen_wheel img").loadImg();
+        $(".news_wheel img").loadImg();
+    })*/
+</script>
+</html>

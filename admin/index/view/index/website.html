@@ -1,0 +1,224 @@
+{include file="public/base" title="网站信息" file_name="website" /}
+<h3>
+    <i class="icon-desktop"></i>&nbsp;网站信息
+</h3>
+<ol class="breadcrumb">
+    <li><a href="{:url('Index/index')}"><i class="icon-home"></i>&nbsp;首页</a></li>
+    <li class="active"><i class="icon-desktop"></i>&nbsp;网站信息</li>
+</ol>
+<!-- 基本信息 start -->
+<div class="content data">
+    <form method="post" enctype="multipart/form-data" action="{:url('Sub/website')}" id="webiste">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr class="active">
+                    <th>
+                        <label for="base" class="col-sm-12 control-label">
+                            网站基础信息
+                            <span class="eidt_note"> {$data?'':'（还未设置站点信息）'} </span>
+                        </label>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="url" class="col-sm-1 control-label">网站图标</label>
+                            <div class="col-sm-3">
+                                <img src="{$data.icon_path?:'/static/images/no_pic.png'}" height="32px">
+                                <a href="javascript:;" class="file">本地上传
+                                    <input type="file" class="pic" name="website_ico" id="">
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="url" class="col-sm-1 control-label">网站logo</label>
+                            <div class="col-sm-3">
+                                <img src="{$data.logo_path?:'/static/images/no_pic.png'}" height="50px">
+                                <a href="javascript:;" class="file">本地上传
+                                    <input type="file" class="pic" name="website_logo" id="">
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="version" class="col-sm-1 control-label">微信公众号</label>
+                            <div class="col-sm-3">
+                                <img src="{$data.weixin_path?:'/static/images/no_pic.png'}" height="100px">
+                                <a href="javascript:;" class="file">本地上传
+                                    <input type="file" class="pic" name="wx_ewm" id="">
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="title" class="col-sm-1 control-label">网站标题</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="title" placeholder="请输入网站标题" value="{$data.title|default=''}">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="keyword" class="col-sm-1 control-label">网站关键词</label>
+                            <div class="col-sm-3">
+                                <textarea class="form-control" rows="3" name="keyword" placeholder="请输入网站关键词">{$data.keyword|default=''}</textarea>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="description" class="col-sm-1 control-label">网站描述内容</label>
+                            <div class="col-sm-3">
+                                <textarea class="form-control" rows="4" name="description" placeholder="请输入网站描述内容">{$data.description|default=''}</textarea>
+                            </div>
+                      </div>
+                    </td>
+                </tr>
+            </tbody>
+            <thead>
+                <tr class="active">
+                    <th>
+                        <label for="base" class="col-sm-12 control-label">网站其它信息</label>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="version" class="col-sm-1 control-label">Copyright信息</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="copyright_info" placeholder="请输入Copyright信息" value="{$data.copyright_info|default=''}">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="version" class="col-sm-1 control-label">域名备案号</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="record_num" placeholder="请输入备案信息" value="{$data.record_num|default=''}">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="phone" class="col-sm-1 control-label">联系电话</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="phone" placeholder="请输入联系电话" value="{$data.phone|default=''}">
+                                <strong class="view_notice">多个以英文;隔开</strong>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="url" class="col-sm-1 control-label">扣扣号码</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="qq" placeholder="请输入扣扣号码" value="{$data.qq|default=''}">
+                                <strong class="view_notice">多个以英文;隔开</strong>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="email" class="col-sm-1 control-label">联系邮箱</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="email" placeholder="请输入联系邮箱" value="{$data.email|default=''}">
+                                <strong class="view_notice">多个以英文;隔开</strong>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="email" class="col-sm-1 control-label">公司地址</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="address" placeholder="请输入公司地址" value="{$data.address|default=''}">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+              <thead>
+                <tr class="active">
+                    <th>
+                        <label for="base" class="col-sm-12 control-label">
+                            第三方代码（一般用于放置百度商桥代码、站长统计代码等）
+                        </label>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="version" class="col-sm-1 control-label">百度商桥</label>
+                            <div class="col-sm-3">
+                                <textarea class="form-control" rows="5" name="shangqiao" placeholder="请输入百度商桥">{$data.shangqiao|default=''}</textarea>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="keyword" class="col-sm-1 control-label">顶部代码</label>
+                            <div class="col-sm-3">
+                                <textarea class="form-control" rows="5" name="script_head" placeholder="请输入顶部代码">{$data.script_head|default=''}</textarea>
+                                <strong class="view_notice">代码会放在 &lt;/head&gt; 标签以上</strong>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="description" class="col-sm-1 control-label">底部代码</label>
+                            <div class="col-sm-3">
+                                <textarea class="form-control" rows="5" name="script_footer" placeholder="请输入底部代码">{$data.script_footer|default=''}</textarea>
+                                <strong class="view_notice">代码会放在 &lt;/body&gt; 标签以上</strong>
+                            </div>
+                      </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <div class="col-sm-1">
+                                <button type="sub" class="form-control">保&nbsp;存</button>
+                            </div>
+                            创建时间：<span class="time_sign">{$data.create_time|default=''}</span>，
+                            上次修改：<span class="time_sign">{$data.update_time|default=''}</span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+<!-- 基本信息 end -->
+{include file="public/footer" /}

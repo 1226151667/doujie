@@ -1,0 +1,69 @@
+{include file="public/base" title="添加账户" file_name="add_empuser" /}
+<h3>
+    <i class="icon-edit"></i>&nbsp;添加账户
+</h3>
+<ol class="breadcrumb">
+    <li><a href="{:url('Index/index')}"><i class="icon-home"></i>&nbsp;首页</a></li>
+    <li><a href="{:url('Empuser/index')}"><i class="icon-user"></i>&nbsp;账户列表</a></li>
+    <li class="active"><i class="icon-edit"></i>&nbsp;添加账户</li>
+</ol>
+<!-- 基本信息 start -->
+<div class="content data">
+    <form method="post" enctype="multipart/form-data" action="{:url('Sub/add_empuser')}" id="add_empuser">
+        <table class="table table-bordered table-hover">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="title" class="col-sm-1 control-label">账号</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="uname" placeholder="请输入账号">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="url" class="col-sm-1 control-label">密码</label>
+                            <div class="col-sm-3">
+                                <input type="password" class="form-control" name="password" placeholder="请输入密码">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+<!--                 <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="url" class="col-sm-1 control-label">重输一次</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="password1" placeholder="请再输入一次密码">
+                            </div>
+                        </div>
+                    </td>
+                </tr> -->
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="url" class="col-sm-1 control-label">备注</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="note" placeholder="请再输入备注">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <div class="col-sm-1">
+                                <button type="sub" class="form-control">添&nbsp;加</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+<!-- 基本信息 end -->
+{include file="public/footer" /}

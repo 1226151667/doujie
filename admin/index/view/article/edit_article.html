@@ -1,0 +1,112 @@
+{include file="public/base" title="$article_data.page_title" /}
+<h3>
+    <i class="icon-edit"></i>&nbsp;{$article_data.page_title}
+</h3>
+<ol class="breadcrumb">
+    <li><a href="{:url('Index/index')}"><i class="icon-home"></i>&nbsp;首页</a></li>
+    <li><a href="{:url('Article/index')}"><i class="icon-user"></i>&nbsp;文章列表</a></li>
+    <li class="active"><i class="icon-edit"></i>&nbsp;{$article_data.page_title}</li>
+</ol>
+<!-- 基本信息 start -->
+<div class="content data">
+    <form method="post" enctype="multipart/form-data" action='{:url("Sub/edit_article","article_id=".$article_data.id)}' id="edit_article">
+        <table class="table table-bordered table-hover">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="title" class="col-sm-1 control-label">类型</label>
+                            <div class="col-sm-1">
+                                <select class="form-control" name="category_id">
+                                    {volist name="category_list" id="category"}
+                                    <option value="{$category.id}" {eq name="$category.id" value="$article_data.category_id"}selected="selected"{/eq}>{$category.name}</option>
+                                    {/volist}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="title" class="col-sm-1 control-label">标题</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="title" placeholder="请输入标题" value="{$article_data.title|default=''}">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="title" class="col-sm-1 control-label">作者</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="author" placeholder="请输入作者" value="{$article_data.author|default=''}">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="description" class="col-sm-1 control-label">描述</label>
+                            <div class="col-sm-3">
+                                <textarea class="form-control" rows="4" name="description" placeholder="请输入描述">{$article_data.description|default=''}</textarea>
+                            </div>
+                      </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="version" class="col-sm-1 control-label">封面</label>
+                            <div class="col-sm-3">
+                                <img src="{$article_data.pic_path?:'/static/a/images/no_pic.png'}" height="100px">
+                                <a href="javascript:;" class="file">本地上传
+                                    <input type="file" class="pic" name="pic" id="">
+                                </a>
+                                <strong class="view_notice">图片尺寸390*260</strong>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <!-- <label for="description" class="col-sm-1 control-label">描述</label> -->
+                            <div class="col-sm-12">
+                                <!-- 加载编辑器的容器 -->
+                                  <script id="container" name="content" type="text/plain">{$article_data.content|default=''}</script>
+                                  <!-- 配置文件 -->
+                                  <script type="text/javascript" src="/static/a/ueditor/ueditor.config.js"></script>
+                                  <!-- 编辑器源码文件 -->
+                                  <script type="text/javascript" src="/static/a/ueditor/ueditor.all.js"></script>
+                                  <!-- 实例化编辑器 -->
+                                  <script type="text/javascript">
+                                      var ue = UE.getEditor('container',{
+                                          toolbars:[
+                                                      [
+                                                          'fontfamily','fontsize','forecolor','backcolor','italic','underline','strikethrough','simpleupload','insertimage','map','link','justifyleft','justifyright','justifycenter','justifyjustify','fullscreen','rowspacingtop','rowspacingbottom','pagebreak','attachment','lineheight','edittip ','autotypeset','preview'
+                                                      ]
+                                                  ]
+                                      });
+                                  </script>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <div class="col-sm-1">
+                                <button type="sub" class="form-control">提&nbsp;交</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+<!-- 基本信息 end -->
+{include file="public/footer" /}

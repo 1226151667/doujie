@@ -1,0 +1,75 @@
+{include file="public/base" title="文章列表" file_name="article" /}
+<h3>
+    <i class="icon-book"></i>&nbsp;文章列表
+</h3>
+<ol class="breadcrumb">
+    <li><a href="{:url('Index/index')}"><i class="icon-home"></i>&nbsp;首页</a></li>
+    <li class="active"><i class="icon-book"></i>&nbsp;文章列表</li>
+</ol>
+<!-- 表格类页面 start -->
+<div class="content table-responsive list">
+    <div class="oper">
+        <a class="btn refresh" href="javascript:void(0);"><i class="icon-repeat"></i> 刷新</a>
+        <a class="btn" href='{:url("Article/edit_article")}'><i class="icon-plus"></i> 添加</a>
+        <a class="btn trash" href="javascript:void(0);"><i class="icon-trash"></i> 删除</a>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <select class="btn" name="category" id="select">
+            <option value="0" {eq name='$search.c_id' value='0'}selected="selected"{/eq}>全部</option>
+            {volist name="category_list" id="category"}
+            <option value="{$category.id}" {eq name='$search.c_id' value='$category.id'}selected="selected"{/eq}>{$category.name}</option>
+            {/volist}
+        </select>&nbsp;&nbsp;
+        <span class="wstxt">时间：</span><a type="text" class="workinput wicon btn" id="inpstart" readonly>{$search.st}</a>
+        <span class="wstxt">&nbsp;--至--&nbsp;</span><a type="text" class="workinput wicon btn" id="inpend" readonly>{$search.et}</a>
+        <div class="search">
+            <input type="text" id="keyword" class="form-control" placeholder="搜索for(标题)" value="{$search.q}">
+        </div>
+        <a class="btn" id="search" now_url="{:url('Article/index')}" href="javascript:void(0);"><i class="icon-search"></i> 搜索</a>
+    </div>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr class="active">
+                <th><input type="checkbox" name="select_all"></th>
+                <th>编号</th>
+                <th>封面</th>
+                <th>类别</th>
+                <th>作者</th>
+                <th>标题</th>
+                <th>浏览量</th>
+                <th>创建时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {volist name="list" id="article" empty="$empty"}
+            <tr>
+                <td><input type="checkbox" name="select_id" value="{$article.id}"></td>
+                <td>{$i}</td>
+                <td><img src="{$article.pic_path}" height="50px"></td>
+                <td>{$article.category_name}</td>
+                <td>{$article.author}</td>
+                <td>{$article.title}</td>
+                <td>{$article.view_num}</td>
+                <td>{$article.create_time}</td>
+                <td><a href='{:url("Article/edit_article","article_id=".$article.id)}'>编辑</a></td>
+            </tr>
+            {/volist}
+        </tbody>
+        <thead>
+            <tr class="active">
+                <th><input type="checkbox" name="select_all"></th>
+                <th>编号</th>
+                <th>封面</th>
+                <th>类别</th>
+                <th>作者</th>
+                <th>标题</th>
+                <th>浏览量</th>
+                <th>创建时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+    </table>
+    {$list->render()}
+</div>
+<!-- 表格类页面 end -->
+{include file="public/footer" /}

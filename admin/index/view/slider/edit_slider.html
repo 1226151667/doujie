@@ -1,0 +1,87 @@
+{include file="public/base" title="$slider_data.page_title" /}
+<h3>
+    <i class="icon-edit"></i>&nbsp;{$slider_data.page_title}
+</h3>
+<ol class="breadcrumb">
+    <li><a href="{:url('Index/index')}"><i class="icon-home"></i>&nbsp;首页</a></li>
+    <li><a href="{:url('Slider/index')}"><i class="icon-play-circle"></i>&nbsp;轮播列表</a></li>
+    <li class="active"><i class="icon-edit"></i>&nbsp;{$slider_data.page_title}</li>
+</ol>
+<!-- 基本信息 start -->
+<div class="content data">
+    <form method="post" enctype="multipart/form-data" action='{:url("Sub/edit_slider","slider_id=".$slider_data.id)}' id="edit_slider">
+        <table class="table table-bordered table-hover">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="version" class="col-sm-1 control-label">背景图片</label>
+                            <div class="col-sm-3">
+                                <img src="{$slider_data.backpic_path?:'/static/a/images/no_pic.png'}" height="100px">
+                                <a href="javascript:;" class="file">本地上传
+                                    <input type="file" class="pic" name="backpic" id="">
+                                </a>
+                                <strong class="view_notice">图片尺寸1920*1080</strong>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="version" class="col-sm-1 control-label">渐入图片</label>
+                            <div class="col-sm-3">
+                                <img src="{$slider_data.pic_path?:'/static/a/images/no_pic.png'}" height="100px">
+                                <a href="javascript:;" class="file">本地上传
+                                    <input type="file" class="pic" name="pic" id="">
+                                </a>
+                                <strong class="view_notice">图片尺寸不要太大</strong>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="title" class="col-sm-1 control-label">大标题</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="big_title" placeholder="请输入大标题" value="{$slider_data.big_title|default=''}">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="title" class="col-sm-1 control-label">小标题</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="small_title" placeholder="请输入小标题" value="{$slider_data.small_title|default=''}">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="title" class="col-sm-1 control-label">排序</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="sort" placeholder="请输入排序" value="{$slider_data.sort|default=''}">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <div class="col-sm-1">
+                                <button type="sub" class="form-control">提&nbsp;交</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+<!-- 基本信息 end -->
+{include file="public/footer" /}

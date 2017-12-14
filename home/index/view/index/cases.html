@@ -1,0 +1,65 @@
+{include file="public/base" style="" /}
+<div class="main fade out">
+    <div class="cases">
+        <div class="dm_overview_t">
+            <h3>PROJECTS</h3>
+        </div>
+        <div class="cases-menu">
+            <nav>
+                <ul id="filters">
+                    <li><a href="{:url('/cases_t')}" class="trans{eq name="type" value=""} active{/eq}" >ALL</a></li>
+                    <li><a href="{:url('/cases_tweb')}" class="trans{eq name="type" value="web"} active{/eq}">网站开发</a></li>
+                    <li><a href="{:url('/cases_twx')}" class="trans{eq name="type" value="wx"} active{/eq}">微信定制</a></li>
+                    <li><a href="{:url('/cases_tapp')}" class="trans{eq name="type" value="app"} active{/eq}">APP应用</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="cases_list">
+            <div class="grid clearfix">
+                {volist name="list" id="cases"}
+                <div class="grid_c grid-item{$i==1?3:4}"
+                data-bg-start="{$cases.bg_start}"  data-bg-end="{$cases.bg_end}">
+                <a href="{:url('/case_detail_1'.$cases.id)}">
+                    <div class="tile-content ui-center trans">
+                     <h2>{$cases.name}</h2>
+                     <span class="category">
+                        {switch name="cases.type"}
+                            {case value="web"}网站开发{/case}
+                            {case value="wx"}微信定制{/case}
+                            {case value="app"}APP应用{/case}
+                        {/switch}
+                     </span>
+                 </div>
+                 <div class="lazyImage right">
+                    <div class="overlay gradient"></div>
+                    <img class="move-img" src="{$cases.w730h730pic_path}">
+                </div>
+            </a>
+        </div>
+        {/volist}         
+    </div>
+    {$list->render()}       
+</div>
+{include file="public/inter" /}
+{include file="public/footer" /}
+<script src="/static/h/js/public.js"></script>
+</body>
+<script>
+    sizeGridItems();
+    $(window).resize(function() {
+        sizeGridItems();
+    });
+
+    function sizeGridItems() {
+        var windowW = $('.grid').width();
+        jQuery('.grid-item3').height(windowW * .5);
+        jQuery('.grid-item4').height(windowW * .25);
+        if ($(window).width() < 979) {
+            jQuery('.grid-item3').height(windowW * 1);
+            jQuery('.grid-item4').height(windowW * .5);
+        }
+    }
+    //$(".cases_list img").loadImg();
+</script>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US"> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>{$website.title}</title>
+    <meta name="keywords" content="{$website.keyword}" />
+    <meta name="description" content="{$website.description}" />
+    <meta name="author" content="doujie" />
+    <meta name="format-detection" content="telephone=no">
+    <!-- Windows/IE font smoothing -->
+    <meta http-equiv="cleartype" content="on">
+    <!-- 网页ico图标设置 -->
+    <link rel="icon" type="image/ico" href="{$website.icon_path}">
+    <link rel="stylesheet" type="text/css" href="/static/h/css/base.css" >
+    <link rel="stylesheet" type="text/css" href="/static/h/css/common.css" >
+    <script src="/static/h/js/jquery-1.9.1.min.js" ></script>
+    <script src="/static/h/js/nprogress.js" ></script>
+    <link rel="stylesheet" type="text/css" href="/static/h/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/static/h/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/h/css/animate.css">
+    {$style_css??' <link rel="stylesheet" type="text/css" href="/static/h/css/style.css"> '} 
+    <style type="text/css">
+    [style]
+    </style>
+    {$website.script_head}
+</head>
+<body>
+<div class="side-navigation trans">
+    <nav class="nav">
+        <ul id="menu-hoofdmenu">
+            <li id="menu-item-1"><a href="{:url('/index')}"><span class="navon">首页</span><span class="navcur">HOME</span></a></li>
+            <li id="menu-item-3"><a href="{:url('/service')}"><span class="navon">服务项目</span><span class="navcur">SERVICE</span> </a></li>
+            <li id="menu-item-4"><a href="{:url('/cases_t')}"><span class="navon">成功案例</span><span class="navcur">PROJECTS</span></a></li>
+            <li id="menu-item-5"><a href="{:url('/about')}"><span class="navon">关于斗捷</span><span class="navcur">ABOUTS US</span></a></li>
+            <li id="menu-item-6"><a href="{:url('/news_c')}"><span class="navon">新闻资讯</span><span class="navcur">NEWS</span></a></li>
+            <li id="menu-item-7"><a href="{:url('/contact')}"><span class="navon">联系斗捷</span><span class="navcur">CONTACT</span></a></li>
+        </ul>
+    </nav>
+    <div class="nav-background">
+        <div class="background home" style="background:url(/static/h/images/nav_bg1.jpg)"></div>
+        <div class="background service" style="background:url(/static/h/images/nav_bg2.jpg)"></div>
+        <div class="background case" style="background:url(/static/h/images/nav_bg3.jpg)"></div>
+        <div class="background company" style="background:url(/static/h/images/nav_bg4.jpg)"></div>
+        <div class="background news" style="background:url(/static/h/images/nav_bg5.jpg)"></div>
+        <div class="background contact" style="background:url(/static/h/images/nav_bg6.jpg)"></div>
+    </div>
+</div>
+<div class="dm_navigation">
+    <div class="logo">
+        <a href="{:url('/index')}" title="斗捷网络"><img src="{$website.logo_path}"  alt="" class="ui-center" /></a>
+    </div>
+    <div class="menu_btn ui-center">
+        <i></i>
+        <i></i>
+        <i></i>
+    </div>
+    <a href="{$website.shangqiao}" class="dm_lin" target="_blank" title="点击在线沟通"><i class="icon iconfont" style="font-size:22px;">&#xe61b;</i></a>
+</div>

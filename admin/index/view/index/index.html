@@ -1,0 +1,286 @@
+{include file="public/base" title="首页" file_name="home" /}
+<h3>
+    <i class="icon-home"></i>&nbsp;首页
+</h3>
+<div class="content">
+<h3>{$Think.session.empuser_uname}</h3>欢迎来到斗捷网络管理端首页.
+</div>
+<!-- 表格类页面 start -->
+<!-- <div class="content table-responsive list">
+    <div class="oper">
+        <a class="btn" href="#"><i class="icon-repeat"></i> 刷新</a>
+        <a class="btn" href="#"><i class="icon-plus"></i> 添加</a>
+        <a class="btn" href="#"><i class="icon-trash"></i> 删除</a>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <span class="wstxt">开始时间：</span><a type="text" class="workinput wicon btn" id="inpstart" readonly>2017年01月01日</a>
+        <span class="wstxt">结束时间：</span><a type="text" class="workinput wicon btn" id="inpend" readonly>2017年01月15日</a>
+        <div class="search">
+            <input type="text" class="form-control" placeholder="Search for...">
+        </div>
+        <a class="btn" href="#"><i class="icon-search"></i> 搜索</a>
+    </div>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr class="active">
+                <th><input type="checkbox"></th>
+                <th>产品</th>
+                <th>付款日期</th>
+                <th>状态</th>
+                <th>产品</th>
+                <th>付款日期</th>
+                <th>状态</th>
+                <th>产品</th>
+                <th>付款日期</th>
+                <th>状态</th>
+                <th>产品</th>
+                <th>付款日期</th>
+                <th>状态</th>
+                <th>产品</th>
+                <th>付款日期</th>
+                <th>状态</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>产品1</td>
+                <td>23/11/2013</td>
+                <td>待发货</td>
+                <td>产品1</td>
+                <td>23/11/2013</td>
+                <td>待发货</td>
+                <td>产品1</td>
+                <td>23/11/2013</td>
+                <td>待发货</td>
+                <td>产品1</td>
+                <td>23/11/2013</td>
+                <td>待发货</td>
+                <td>产品1</td>
+                <td>23/11/2013</td>
+                <td>待发货</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>产品1</td>
+                <td>23/11/2013</td>
+                <td>待发货</td>
+                <td>产品1</td>
+                <td>23/11/2013</td>
+                <td>待发货</td>
+                <td>产品1</td>
+                <td>23/11/2013</td>
+                <td>待发货</td>
+                <td>产品1</td>
+                <td>23/11/2013</td>
+                <td>待发货</td>
+                <td>产品1</td>
+                <td>23/11/2013</td>
+                <td>待发货</td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr class="active">
+                <th><input type="checkbox"></th>
+                <th>产品</th>
+                <th>付款日期</th>
+                <th>状态</th>
+                <th>产品</th>
+                <th>付款日期</th>
+                <th>状态</th>
+                <th>产品</th>
+                <th>付款日期</th>
+                <th>状态</th>
+                <th>产品</th>
+                <th>付款日期</th>
+                <th>状态</th>
+                <th>产品</th>
+                <th>付款日期</th>
+                <th>状态</th>
+            </tr>
+        </thead>
+    </table>
+    <div class="page">
+        <ul>
+            <li><a href="">上一页</a></li>
+            <li><a href="">1</a></li>
+            <li><a href="">2</a></li>
+            <li><a href="">3</a></li>
+            <li><a href="">4</a></li>
+            <li><a href="">5</a></li>
+            <li><a href="">下一页</a></li>
+        </ul>
+    </div>
+</div> -->
+<!-- 表格类页面 end -->
+
+<!-- 基本信息 start -->
+<!-- <div class="content data">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr class="active">
+                <th>
+                    <label for="base" class="col-sm-12 control-label">网站基础信息</label>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="title" class="col-sm-1 control-label">网站标题</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="firstname" placeholder="请输入网站标题">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="url" class="col-sm-1 control-label">网站网址</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="firstname" placeholder="请输入网站网址">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="url" class="col-sm-1 control-label">网站logo</label>
+                        <div class="col-sm-3">
+                            <input type="file" class="form-control">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="url" class="col-sm-1 control-label">网站图标</label>
+                        <div class="col-sm-3">
+                            <input type="file" class="form-control">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="keyword" class="col-sm-1 control-label">网站关键词</label>
+                        <div class="col-sm-3">
+                            <textarea class="form-control" rows="3" placeholder="请输入网站关键词"></textarea>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="description" class="col-sm-1 control-label">网站描述内容</label>
+                        <div class="col-sm-3">
+                            <textarea class="form-control" rows="4" placeholder="请输入网站描述内容"></textarea>
+                        </div>
+                  </div>
+                </td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr class="active">
+                <th>
+                    <label for="base" class="col-sm-12 control-label">网站底部信息</label>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="version" class="col-sm-1 control-label">版权信息</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="firstname" placeholder="请输入版权信息">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="phone" class="col-sm-1 control-label">联系电话</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="firstname" placeholder="请输入联系电话">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="email" class="col-sm-1 control-label">联系邮箱</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="firstname" placeholder="请输入联系邮箱">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <div class="col-sm-1">
+                            <button class="form-control">保存</button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+<!-- 基本信息 end -->
+
+<!-- 添加代码 start -->
+<!-- <div class="content data">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr class="active">
+                <th>
+                    <label for="base" class="col-sm-12 control-label">第三方代码（如统计代码、百度商桥代码、分享代码等）</label>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="description" class="col-sm-1 control-label">顶部代码</label>
+                        <div class="col-sm-5">
+                            <textarea class="form-control" rows="6" placeholder="请输入网站顶部代码"></textarea>
+                            <span class="view_notice">代码会放在 &lt;/head&gt; 标签以上</span>
+                        </div>
+                  </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="description" class="col-sm-1 control-label">底部代码</label>
+                        <div class="col-sm-5">
+                            <textarea class="form-control" rows="6" placeholder="请输入网站底部代码"></textarea>
+                            <span class="view_notice">代码会放在 &lt;/body&gt; 标签以上</span>
+                        </div>
+                  </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <div class="col-sm-1">
+                            <button class="form-control">保存</button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+<!-- 添加代码 end -->
+{include file="public/footer" /}

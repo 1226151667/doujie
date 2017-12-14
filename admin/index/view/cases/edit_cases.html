@@ -1,0 +1,167 @@
+{include file="public/base" title="$cases_data.page_title"  /}
+<h3>
+    <li class="active"><i class="icon-edit"></i>{$cases_data.page_title}</li>
+</h3>
+<ol class="breadcrumb">
+    <li><a href="{:url('Index/index')}"><i class="icon-home"></i>&nbsp;首页</a></li>
+    {switch name="type" }
+        {case value="web"}<li><a href="{:url('Cases/show','type='.$type)}"><i class="icon-laptop"></i>&nbsp;网站开发</a></li>{/case}
+        {case value="wx"}<li><a href="{:url('Cases/show','type='.$type)}"><i class="icon-comments"></i>&nbsp;微信定制</a></li>{/case}
+        {case value="app"}<li><a href="{:url('Cases/show','type='.$type)}"><i class="icon-mobile-phone"></i>&nbsp;APP应用</a></li>{/case}
+    {/switch}
+    <li class="active"><i class="icon-edit"></i>{$cases_data.page_title}</li>
+</ol>
+<!-- 基本信息 start -->
+<div class="content data">
+    <form method="post" enctype="multipart/form-data" action='{:url("Sub/edit_cases","type=".$cases_data.type."&cases_id=".$cases_data.id)}' id="edit_cases">
+        <table class="table table-bordered table-hover">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="title" class="col-sm-1 control-label">名称</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="name" placeholder="请输入案例名称" value="{$cases_data.name|default=''}">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="title" class="col-sm-1 control-label">开始颜色</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="bg_start" placeholder="请输入开始颜色,如#e0e0e0" value="{$cases_data.bg_start|default=''}">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="title" class="col-sm-1 control-label">结束颜色</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="bg_end" placeholder="请输入结束颜色,如#e0e0e0" value="{$cases_data.bg_end|default=''}">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="title" class="col-sm-1 control-label">描述</label>
+                            <div class="col-sm-3">
+                                <textarea class="form-control" rows="6" name="description" placeholder="请输入描述">{$cases_data.description|default=''}</textarea>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                {eq name="type" value="web"}
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="title" class="col-sm-1 control-label">链接</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="link" placeholder="请输入链接" value="{$cases_data.link|default=''}">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                {else/}
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="version" class="col-sm-1 control-label">二维码</label>
+                            <div class="col-sm-3">
+                                <img src="{$cases_data.ewm_path?:'/static/a/images/no_pic.png'}" height="100px">
+                                <a href="javascript:;" class="file">本地上传
+                                    <input type="file" class="pic" name="ewm" id="">
+                                </a>
+                                <strong class="view_notice">图片尺寸150*150</strong>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                {/eq}
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="version" class="col-sm-1 control-label">海报图</label>
+                            <div class="col-sm-3">
+                                <img src="{$cases_data.pic_path?:'/static/a/images/no_pic.png'}" height="100px">
+                                <a href="javascript:;" class="file">本地上传
+                                    <input type="file" class="pic" name="pic" id="">
+                                </a>
+                                <strong class="view_notice">图片尺寸1920*1080</strong>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="version" class="col-sm-1 control-label">730*730图</label>
+                            <div class="col-sm-3">
+                                <img src="{$cases_data.w730h730pic_path?:'/static/a/images/no_pic.png'}" height="100px">
+                                <a href="javascript:;" class="file">本地上传
+                                    <input type="file" class="pic" name="w730h730pic" id="">
+                                </a>
+                                <strong class="view_notice">图片尺寸730*730</strong>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="version" class="col-sm-1 control-label">730*1004图</label>
+                            <div class="col-sm-3">
+                                <img src="{$cases_data.w730h1004pic_path?:'/static/a/images/no_pic.png'}" height="100px">
+                                <a href="javascript:;" class="file">本地上传
+                                    <input type="file" class="pic" name="w730h1004pic" id="">
+                                </a>
+                                <strong class="view_notice">图片尺寸730*1004</strong>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <div class="form-group">
+                            <!-- <label for="description" class="col-sm-1 control-label">描述</label> -->
+                            <div class="col-sm-12">
+                                <!-- 加载编辑器的容器 -->
+                                  <script id="container" name="content" type="text/plain">{$cases_data.content|default=''}</script>
+                                  <!-- 配置文件 -->
+                                  <script type="text/javascript" src="/static/a/ueditor/ueditor.config.js"></script>
+                                  <!-- 编辑器源码文件 -->
+                                  <script type="text/javascript" src="/static/a/ueditor/ueditor.all.js"></script>
+                                  <!-- 实例化编辑器 -->
+                                  <script type="text/javascript">
+                                      var ue = UE.getEditor('container',{
+                                          toolbars:[
+                                                      [
+                                                          'fontfamily','fontsize','forecolor','backcolor','italic','underline','strikethrough','simpleupload','insertimage','map','link','justifyleft','justifyright','justifycenter','justifyjustify','fullscreen','rowspacingtop','rowspacingbottom','pagebreak','attachment','lineheight','edittip ','autotypeset','preview'
+                                                      ]
+                                                  ]
+                                      });
+                                  </script>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <div class="col-sm-1">
+                                <button type="sub" class="form-control">提&nbsp;交</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+<!-- 基本信息 end -->
+{include file="public/footer" /}

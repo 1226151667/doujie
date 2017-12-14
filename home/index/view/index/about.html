@@ -1,0 +1,81 @@
+{include file="public/base" style="$style" /}
+<div id="intro" class="vertical-obj fade out">
+    <canvas id="c"></canvas>
+    <script src='/static/h/js/dat.gui.min3.js'></script>
+    <script src="/static/h/js/index3.js"></script>
+    <div class="vertical-obj-cont">
+        <h1>DOJAY<br/>NETWORK</h1>
+        <h6>
+            斗捷网络<br/> 是一家创新型设计服务公司
+            <br/> 以全新的视觉设计及出色的用户体验为合作伙伴创造更大的商业价值！
+        </h6>
+    </div>
+    <a href="#faith" class="down_btn">&#xe605;</a>
+</div>
+<div class="dm_faith trans" id="faith">
+    <div class="section-theme">
+        <div class="table">
+            <div class="cell">
+                <div class="body">
+                    <div class="box-half clearfix"></div>
+                    <div class="box-half clearfix"></div>
+                    <h3>about us</h3>
+                    <div class="box-half">
+                        <p>
+                            上海斗捷网络科技有限公司是为企业提供互联网化服务的专业公司。<br><br>我们提供高品质服务，建立高质量网站，坚持以“一流企业建设一流网站”的服务理念，长期服务于大中型企业，<br>为其提供高品质一站式网络运营方案，多次获得客户嘉奖。同时，针对中小型企业，我们将提供志勋服务平台，多渠道辅助企业，获取双赢的局面。<br><br>多年的项目经验帮助我们成功探索出了一套涵盖用户研究、需求分析、产品定位、交互设计、<br>视觉传达、技术实施、测试部署、运营维护、营销推广等全方位的规范服务流程，从而帮助客户不仅可以完成优秀的项目，还可以得到互联网方面的长期专业帮助。<br>从成立至今，点硕已成功进行过数千个项目的专业技术实施服务，点硕专业的顾问团队、稳定的开发人员、强大的技术能力、贴心的客户服务深受广大客户的赞誉和信赖。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="spacer" style="height:100px;background:#fff;"></div>
+<div class="dm_service">
+    <h3>Our<br/>service</h3>
+    <div class="dm_service_r">
+        <p>我们提供高端网站定制、H5开发、微信深度定制开发、微信公众号运营等全方位服务</p>
+        <p>根据客户需求有针对性地定制高端网站建设，用设计的方法推动产品价值最大化，突出的创意表现及创新的工具应用来为客户提供出色的互动品牌设计服务。</p>
+    </div>
+</div>
+<div class="dm_strategy">
+    <h3>corporate<br/>culture</h3>
+    <div class="cdm clearfix">
+        <ul>
+            <li class="c">
+                <span>核心竞争力</span>
+                <p>奋斗者是企业最宝贵的财富。企业核心竞争力的载体是团队，企业文化越健康，团队成员对健康文化的践行度越高，企业的核心竞争力就越强。</p>
+            </li>
+            <li class="d">
+                <span>公司宗旨</span>
+                <p>为客户创造价值，为社会创造财富，为员工创造机会，为投资者获取回报，为斗捷数字赢得发展。</p>
+            </li>
+            <li class="m">
+                <span>竞争优势</span>
+                <p>面对客户，具有敏锐洞察力和感染力的工程商人 ；吃苦耐劳善于赢得客户信赖的交付经理 ；敢立军令状的研发团队 ；到处涌现感动客户的英雄支持团队。</p>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="team_bg noscroll-bg" style="background-image:url(/static/h/images/our2.jpg);">
+    <h3>OUR TEAM</h3>
+</div>
+{include file="public/inter" /}
+{include file="public/footer" /}
+<script src="/static/h/js/public.js"></script>
+</body>
+<script src="/static/h/js/particles.min.js"></script>
+<script src="/static/h/js/app.js"></script>
+<script src="/static/h/js/jquery.hoverdir.js"></script>
+<script>
+    $('#da-thumbs > li').hoverdir();
+
+    $('.down_btn').bind('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top
+        }, 1500);
+        event.preventDefault();
+    });
+</script>
+</html>

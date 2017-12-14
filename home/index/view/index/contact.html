@@ -1,0 +1,50 @@
+{include file="public/base" style="" /}
+<div class="main fade out">
+	<div class="Dm_contact">
+		<h3>CONTACT</h3>
+		<div class="contact_desc clearfix">
+			<ul>
+				<li>
+					<h4>联系斗捷</h4>
+					<div class="address">
+						<span>集团总部</span>
+						<p>{$website.address}</p>
+					</div>
+				</li>
+				<li>
+					<div class="contact_style clearfix">
+						{volist name="qqs" id="qq"}
+						<a href="http://wpa.qq.com/msgrd?v=3&uin={$qq}&site=qq&menu=yes"  title="在线客服">&#xe62e;</a>
+						{/volist}
+						<a href="javascript:;" class="weixin" title="关注斗捷官方微信">&#xe63b;
+							<div class="s_erweima"><img src="{$website.weixin_path}"></div>
+						</a>
+					</div>
+					<dl class="clearfix">
+						<dt>联络电话</dt>
+						{volist name="phones" id="phone"}
+						<dd><a href="tel:{$phone}">{$phone}</a></dd>
+						{/volist}
+					</dl>
+					<dl class="clearfix">
+						<dt>电子信箱</dt>
+						{volist name="emails" id="email"}
+						<dd><a href="mailto:{$email}">{$email}</a></dd>
+						{/volist}
+					</dl>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+{include file="public/footer" /}
+<script src="/static/h/js/public.js"></script>
+</body>
+<script type="text/javascript">
+$(".weixin").hover(function(){
+		$(this).find(".s_erweima").stop(true,true).fadeIn();
+	},function(){
+		$(this).find(".s_erweima").stop(true,true).fadeOut();
+	})
+</script>
+</html>

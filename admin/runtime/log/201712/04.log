@@ -1,0 +1,27 @@
+[ 2017-12-04T14:02:48+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php
+[ log ] www.shdoujie.com/admin.php [运行时间：0.034002s][吞吐率：29.41req/s] [内存消耗：775.42kb] [文件加载：22]
+[ info ] [ LANG ] D:\WWW\doujie\PC\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lk2f40k91kt5ia2ogm57598jf7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.shdoujie.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------

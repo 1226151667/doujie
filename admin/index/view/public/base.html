@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title>[title]-斗捷网络</title>
+<!-- 网页ico图标设置 -->
+<link rel="icon" type="image/ico" href="{$Think.session.icon_path}">
+{css href="/static/a/css/bootstrap.min.css" /}
+{css href="/static/a/Font-Awesome/css/font-awesome.min.css" /}
+{css href="/static/a/css/base.css" /}
+{css href="/static/a/jedate/skin/jedate.css" /}
+</head>
+<body>
+<div id="top">
+	<ul class="pull-left top-left">
+		<li class="logo">
+			<a href="{:url('Index/index')}">
+				<img big_logo="{$Think.session.logo_path}" small_logo="{$Think.session.icon_path}" src="{$Think.session.logo_path}" />
+				<!-- <span>&nbsp;斗捷网络</span> -->
+			</a>
+		</li>
+		<li><a class="case-toggle" href="javascript:void(0);" title="展开/折叠菜单栏"><i class="icon-reorder"></i></a></li>
+		<li><a href="/" title="前台网站首页" target="_blank"><i class="icon-laptop"></i></a></li>
+	</ul>
+    <ul class="pull-right top-right">
+<!--         <li class="msg">
+        	<a href="/" title="新消息"><i class="icon-bell"></i>&nbsp;8</a>
+            <ul>
+                <li><a href="123"><i class="icon-file"></i>&nbsp;有新的访客浏览<span class="pull-right">8</span></a></li>
+                <li><a href="123"><i class="icon-file"></i>&nbsp;有新的访客留言<span class="pull-right">8</span></a></li>
+            </ul>
+        </li> -->
+        <li class="user">
+        	<a href=""><img src="/static/a/images/user.jpg"  height="30px" />&nbsp;&nbsp;{$Think.session.empuser_uname}&nbsp;<span class="caret"></span></a>
+            <ul>
+                <li><a href="{:url('Empuser/edit_password')}"><i class="icon-edit"></i>&nbsp;修改密码</a></li>
+                <li><a href="{:url('Login/out')}"><i class="icon-off"></i>&nbsp;退出登录</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div id="nav">
+	<ul>
+		<li>
+			<a href="{:url('Index/index')}"><i class="icon-home pull-left"></i>&nbsp;网站首页</a>
+		</li>
+		<li>
+			<a href="javascript:void(0);"><i class="icon-cogs pull-left"></i>&nbsp;站点配置<i class="icon-angle-right pull-right"></i></a>
+			<ul>
+				<li><a href="{:url('Index/website')}"><i class="icon-desktop"></i>&nbsp;网站信息</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="javascript:void(0);"><i class="icon-user pull-left"></i>&nbsp;账户管理<i class="icon-angle-right pull-right"></i></a>
+			<ul>
+				<li><a href="{:url('Empuser/index')}"><i class="icon-user"></i>&nbsp;账户列表</a></li>
+				<li><a href="{:url('Empuser/login')}"><i class="icon-signin"></i>&nbsp;登录日志</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="javascript:void(0);"><i class="icon-book pull-left"></i>&nbsp;资讯管理<i class="icon-angle-right pull-right"></i></a>
+			<ul>
+				<li><a href="{:url('article/index')}"><i class="icon-book"></i>&nbsp;资讯列表</a></li>
+				<li><a href="{:url('article/category')}"><i class="icon-tags"></i>&nbsp;资讯类别</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="javascript:void(0);"><i class="icon-play-circle pull-left"></i>&nbsp;轮播管理<i class="icon-angle-right pull-right"></i></a>
+			<ul>
+				<li><a href="{:url('Slider/index')}"><i class="icon-play-circle"></i>&nbsp;轮播列表</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="javascript:void(0);"><i class="icon-th pull-left"></i>&nbsp;案例管理<i class="icon-angle-right pull-right"></i></a>
+			<ul>
+				<li><a href="{:url('Cases/show','type=web')}"><i class="icon-laptop"></i>&nbsp;网站开发</a></li>
+				<li><a href="{:url('Cases/show','type=wx')}"><i class="icon-comments"></i>&nbsp;微信定制</a></li>
+				<li><a href="{:url('Cases/show','type=app')}"><i class="icon-mobile-phone"></i>&nbsp;APP应用</a></li>
+				<li><a href="{:url('Cases/customer')}"><i class="icon-group"></i>&nbsp;合作客户</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="javascript:void(0);"><i class="icon-file pull-left"></i>&nbsp;附件管理<i class="icon-angle-right pull-right"></i></a>
+			<ul>
+				<li><a href="{:url('Att/show','type=img')}"><i class="icon-picture"></i>&nbsp;图片列表</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<div id="main" class="[file_name]">
+<!-- 	<h3>
+		<i class="icon-cogs"></i>&nbsp;[nav3]
+	</h3>
+	<ol class="breadcrumb">
+	    <li><a href="#"><i class="icon-cogs"></i>&nbsp;[nav1]</a></li>
+	    <li><a href="#"><i class="icon-cogs"></i>&nbsp;[nav2]</a></li>
+	    <li class="active"><i class="icon-cogs"></i>&nbsp;[nav3]</li>
+	</ol> -->

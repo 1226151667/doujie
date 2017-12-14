@@ -1,0 +1,76 @@
+{include file="public/base" style="" /}
+<div class="main">
+    <div class="pageContent">
+        <div class="dm_info_ban">
+            <div class="bgimg-out">
+                <img class="bgimg w-f" src="{$info.pic_path}" alt="{$info.name}">
+            </div>
+            <div class="dm-cont">
+                <span class="line"></span>
+                <h4>
+                    {$info.name}                
+                </h4>
+                <p style="max-width:400px">{$info.description}</p>
+                {eq name="info.type" value="web"}
+                <a class="link-ico link" href="{$info.link}"  target="_blank">
+                    <span class="bg"></span><i></i>
+                </a>            
+                {else/}
+                <p class="ewm"><br><img src="{$info.ewm_path}"></p>
+                {/eq}          
+            </div>
+            <div class="loader"></div>
+        </div>
+        <div class="img_dui">
+            {$info.content}
+        </div>
+    </div>
+</div>
+<div class="menuWeel1">
+    {notempty name="$previous_id"}
+    <a href="{:url('/case_detail_1'.$previous_id)}" class="butLeft"><i class="icon iconfont" style="font-size:18px;">&#xe509;</i></a>
+    {/notempty}
+    <a href="{:url('/cases_t')}" class="works_more">&#xe630;</a>
+    {notempty name="$next_id"}
+    <a href="{:url('/case_detail_1'.$next_id)}" class="butRight"><i class="icon iconfont" style="font-size:18px;">&#xe654;</i></a>
+    {/notempty}
+</div>
+{include file="public/inter" /}
+{include file="public/footer" /}
+<script src="/static/h/js/public.js"></script>
+</body>
+<script type="text/javascript">
+    $(function() {
+        if ($(window).width() > 900) {
+            $(".dm_info_ban").height($(window).height() - 50);
+        };
+        var src = $(".dm_info_ban .bgimg").attr("src");
+        _PreLoadImg([
+            src
+            ], function() {
+                $(".loader").fadeOut();
+                if ($(window).width() > 900) {
+                    FullBg($(".dm_info_ban"), $(".dm_info_ban .bgimg"));
+                }
+                $(".dm_info_ban").addClass('active');
+                $(".dm_info_ban .bgimg").stop().animate({
+                    opacity: 1
+                }, 500);
+            })
+
+        $(window).scroll(function() {
+            var top = $(window).scrollTop() / 2;
+            $(".dm_info_ban .bgimg").css('top', top);
+        });
+        window.onresize = function() {
+            if ($(window).width() > 900) {
+                $(".dm_info_ban").height($(window).height() - 100);
+            } else {
+                $(".dm_info_ban").attr("style", "");
+                $(".dm_info_ban .bgimg").attr("style", "").removeClass('h-f');
+            }
+            $(".dm_info_ban .bgimg").css('opacity', '1');
+        }
+    })
+</script>
+</html>

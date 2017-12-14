@@ -1,0 +1,74 @@
+{include file="public/base" title="$page_title" file_name="attachment" /}
+<h3>
+    {switch name="type" }
+        {case value="img"}<i class="icon-picture"></i>&nbsp;图片列表{/case}
+    {/switch}
+</h3>
+<ol class="breadcrumb">
+    <li><a href="{:url('Index/index')}"><i class="icon-home"></i>&nbsp;首页</a></li>
+    {switch name="type" }
+        {case value="img"}<li class="active"><i class="icon-picture"></i>&nbsp;图片列表</li>{/case}
+    {/switch}
+</ol>
+<!-- 表格类页面 start -->
+<div class="content table-responsive list">
+    <div class="oper">
+        <a class="btn refresh" href="javascript:void(0);"><i class="icon-repeat"></i> 刷新</a>
+        <a class="btn trash" href="javascript:void(0);"><i class="icon-trash"></i> 删除</a>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <select class="btn" name="use" id="select">
+            <option value="all" {eq name='$search.use' value='all'}selected="selected"{/eq}>全部</option>
+            <option value="yes" {eq name='$search.use' value='yes'}selected="selected"{/eq}>已使用</option>
+            <option value="no" {eq name='$search.use' value='no'}selected="selected"{/eq}>未使用</option>
+        </select>&nbsp;&nbsp;
+        <span class="wstxt">时间：</span><a type="text" class="workinput wicon btn" id="inpstart" readonly>{$search.st}</a>
+        <span class="wstxt">&nbsp;--至--&nbsp;</span><a type="text" class="workinput wicon btn" id="inpend" readonly>{$search.et}</a>
+        <div class="search">
+            <input type="text" id="keyword" class="form-control" placeholder="搜索for(标注)" value="{$search.q}">
+        </div>
+        <a class="btn" id="search" now_url="{:url('Att/show/'.$type)}" href="javascript:void(0);"><i class="icon-search"></i> 搜索</a>
+    </div>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr class="active">
+                <th><input type="checkbox" name="select_all"></th>
+                <th>编号</th>
+                <th>标注</th>
+                {eq name="type" value="img"}
+                <th>图片</th>
+                {/eq}
+                <th>使用次数</th>
+                <th>创建时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            {volist name="list" id="attachment" empty="$empty"}
+            <tr>
+                <td><input type="checkbox" name="select_id" value="{$attachment.id}"></td>
+                <td>{$i}</td>
+                <td>{$attachment.sign}</td>
+                {eq name="type" value="img"}
+                <td><img src="{$attachment.file_path}" height="50px"></td>
+                {/eq}
+                <td>{$attachment.use_num}</td>
+                <td>{$attachment.create_time}</td>
+            </tr>
+            {/volist}
+        </tbody>
+        <thead>
+            <tr class="active">
+                <th><input type="checkbox" name="select_all"></th>
+                <th>编号</th>
+                <th>标注</th>
+                {eq name="type" value="img"}
+                <th>图片</th>
+                {/eq}
+                <th>使用次数</th>
+                <th>创建时间</th>
+            </tr>
+        </thead>
+    </table>
+    {$list->render()}
+</div>
+<!-- 表格类页面 end -->
+{include file="public/footer" /}

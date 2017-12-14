@@ -1,0 +1,52 @@
+{include file="public/base" style="" /}
+<div class="main fade out">
+    <div class="Dm_news">
+        <div class="dm_overview_t">
+            <h3>NEWS</h3>
+        </div>
+        <div class="news-menu">
+            <nav>
+                <ul id="filters1">
+                    <li><a href="{:url('/news_c')}" class="{eq name="c_id" value="0"}active {/eq}trans">全部资讯</a></li>
+                    {volist name="category_list" id="category"}
+                    <li>
+                        <a href="{:url('/news_c'.$category.id)}" class="{eq name="c_id" value="$category.id"}active {/eq}trans" >{$category.name}</a>
+                    </li>				
+                    {/volist}
+                </ul>
+            </nav>
+        </div>
+        <div class="news_list">
+            <ul>
+                {volist name="list" id="new"}
+                <li>
+                    <a href="{:url('/new_detail_1'.$new.id)}">
+                        <div class="img1">
+                            <img src="{$new.pic_path}" alt="" class="trans">
+                            <div class="date">
+                                <span>{$new.create_y}-{$new.create_m}</span>{$new.create_d}                                   
+                            </div>
+                        </div>
+                        <div class="info">
+                            <h3 class="ui-nowrap">{$new.title}</h3>
+                            <p class="ui-nowrap2">{$new.description}</p>
+                        </div>
+                    </a>
+                </li>
+                {/volist}
+            </ul>
+            <div class="clear"></div>
+            {$list->render()}		
+        </div>
+    </div>
+</div>
+{include file="public/inter" /}
+{include file="public/footer" /}
+<script src="/static/h/js/public.js"></script>
+<script>
+// $(function(){
+//     $(".news_list img").loadImg();
+// })
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+{include file="public/base" title="文章类别" file_name="category" /}
+<h3>
+    <i class="icon-tags"></i>&nbsp;资讯类别
+</h3>
+<ol class="breadcrumb">
+    <li><a href="{:url('Index/index')}"><i class="icon-home"></i>&nbsp;首页</a></li>
+    <li class="active"><i class="icon-tags"></i>&nbsp;资讯类别</li>
+</ol>
+<!-- 表格类页面 start -->
+<div class="content table-responsive list">
+    <div class="oper">
+        <a class="btn refresh" href="javascript:void(0);"><i class="icon-repeat"></i> 刷新</a>
+        <a class="btn" href='{:url("Article/edit_category")}'><i class="icon-plus"></i> 添加</a>
+        <a class="btn trash" href="javascript:void(0);"><i class="icon-trash"></i> 删除</a>
+    </div>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr class="active">
+                <th><input type="checkbox" name="select_all"></th>
+                <th>编号</th>
+                <th>名称</th>
+                <th>排序</th>
+                <th>更新时间</th>
+                <th>创建时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {volist name="list" id="category" empty="$empty"}
+            <tr>
+                <td><input type="checkbox" name="select_id" value="{$category.id}"></td>
+                <td>{$i}</td>
+                <td>{$category.name}</td>
+                <td>{$category.sort}</td>
+                <td>{$category.update_time}</td>
+                <td>{$category.create_time}</td>
+                <td><a href='{:url("Article/edit_category","category_id=".$category.id)}'>编辑</a></td>
+            </tr>
+            {/volist}
+        </tbody>
+        <thead>
+            <tr class="active">
+                <th><input type="checkbox" name="select_all"></th>
+                <th>编号</th>
+                <th>名称</th>
+                <th>排序</th>
+                <th>更新时间</th>
+                <th>创建时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+    </table>
+    {$list->render()}
+</div>
+<!-- 表格类页面 end -->
+{include file="public/footer" /}

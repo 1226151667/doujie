@@ -1,0 +1,53 @@
+{include file="public/base" title="$customer_data.page_title" /}
+<h3>
+    <i class="icon-edit"></i>&nbsp;{$customer_data.page_title}
+</h3>
+<ol class="breadcrumb">
+    <li><a href="{:url('Index/index')}"><i class="icon-home"></i>&nbsp;首页</a></li>
+    <li><a href="{:url('Cases/customer')}"><i class="icon-user"></i>&nbsp;合作客户</a></li>
+    <li class="active"><i class="icon-edit"></i>&nbsp;{$customer_data.page_title}</li>
+</ol>
+<!-- 基本信息 start -->
+<div class="content data">
+    <form method="post" enctype="multipart/form-data" action='{:url("Sub/edit_customer","customer_id=".$customer_data.id)}' id="edit_customer">
+        <table class="table table-bordered table-hover">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="title" class="col-sm-1 control-label">客户名称</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="name" placeholder="请输入客户名称" value="{$customer_data.name|default=''}">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="version" class="col-sm-1 control-label">logo</label>
+                            <div class="col-sm-3">
+                                <img src="{$customer_data.logo_path?:'/static/a/images/no_pic.png'}" height="80px">
+                                <a href="javascript:;" class="file">本地上传
+                                    <input type="file" class="pic" name="logo" id="">
+                                </a>
+                                <strong class="view_notice">图片尺寸170*80</strong>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <div class="col-sm-1">
+                                <button type="sub" class="form-control">提&nbsp;交</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+<!-- 基本信息 end -->
+{include file="public/footer" /}
