@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ueditor demo</title>
+</head>
+
+<body>
+    <!-- 加载编辑器的容器 -->
+    <script id="container" name="content" type="text/plain">快点写点什么吧</script>
+    <!-- 配置文件 -->
+    <script type="text/javascript" src="ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script type="text/javascript" src="ueditor.all.js"></script>
+    <!-- 实例化编辑器 -->
+    <script type="text/javascript">
+        var ue = UE.getEditor('container',{
+            toolbars:[
+                        [
+                            'source',//源代码
+                            'undo', //撤销
+                            'redo', //重做
+                            'fontfamily', //字体
+                            'fontsize', //字号
+                            'paragraph', //段落格式
+                            'insertcode', //代码语言
+                            'customstyle', //自定义标题
+                            'emotion', //表情
+                            'spechars', //特殊字符
+                            'bold', //加粗
+                            'italic', //斜体
+                            'underline', //下划线
+                            'strikethrough', //删除线
+                            'snapscreen', //截图
+                            'simpleupload', //单图上传
+                            'insertimage', //多图上传 
+                            'map', //Baidu地图
+                            'gmap', //Google地图
+                            'link', //超链接
+                            'indent', //首行缩进
+                            'preview', //预览
+                            'selectall', //全选
+                            'horizontal', //分隔线
+                            'cleardoc', //清空文档
+                            // 'insertvideo', //视频
+                            'justifyleft', //居左对齐
+                            'justifyright', //居右对齐
+                            'justifycenter', //居中对齐
+                            'justifyjustify', //两端对齐
+                            'forecolor', //字体颜色
+                            'backcolor', //背景色
+                            'insertorderedlist', //有序列表
+                            'insertunorderedlist', //无序列表
+                            'fullscreen', //全屏
+                            'rowspacingtop', //段前距
+                            'rowspacingbottom', //段后距
+                            'pagebreak', //分页
+                            'attachment', //附件
+                            'lineheight', //行间距
+                            'edittip ', //编辑提示
+                            'autotypeset', //自动排版
+                            'background', //背景
+                            'template', //模板
+                        ]
+                    ]
+        });
+    </script>
+</body>
+
+</html>

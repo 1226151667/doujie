@@ -1,0 +1,251 @@
+/**********重置css样式**********/
+*{
+	margin:0px;
+	padding:0px;
+	font-family:'微软雅黑','黑体','宋体';
+}
+body{
+	background: #eeeeee;
+}
+ul,ol,li{
+	list-style:none;
+}
+a,a:hover,a:link,a:active{
+	text-decoration: none;
+}
+:root{
+	--color0:#428bca;
+	--jedate_color:#428bca;
+}
+.breadcrumb a{
+	color:#777;
+}
+.breadcrumb a:hover{
+	color:var(--color0);
+}
+/**********top用户栏css**********/
+#top{
+	z-index:9;
+	height:50px;
+	line-height:50px;
+	background:#d7dde4;
+	position:fixed;
+	width:100%;
+}
+#top>ul>li{
+	float:left;
+}
+#top .logo{
+	height:50px;
+	line-height:50px;
+	width:150px;
+	background:#1c2b36;/*原色-#3a4651*/
+}
+#top .logo a{
+	padding:0 10px;
+	color:#eeeeee;
+	font-size:18px;
+}
+#top .logo a img{
+	height:50px;
+}
+#top ul li:not(.logo),#top ul li:not(.logo) a{
+	display:block;
+	height:50px;
+	width:70px;
+	line-height:50px;
+	text-align:center;
+	color:#3c3c3c;
+	font-size:14px;
+}
+#top ul li:not(.logo) a i{
+	font-size:18px;
+}
+/**顶部左边栏**/
+#top .top-left li:not(.logo) a{
+	width:70px;
+}
+#top .top-left li:not(.logo) a:hover{
+	background:var(--color0);
+	color:white;
+}
+#top .top-left>li:not(:first-child) a{
+	border-left: 1px solid rgba(0,0,0,0.08);
+}
+/**顶部右边栏**/
+#top .top-right li ul{
+	position:relative;
+	top:-2px;
+	border-top: 2px solid #adadad;
+	background:white;
+	display: none;
+}
+#top .top-right>li:not(:last-child){
+	border-right: 1px solid rgba(0,0,0,0.08);	
+}
+#top .top-right .user ul{
+	right:0px;
+	width:150px;
+}
+#top .top-right .user,#top .top-right .user>a{
+	width:150px;
+}
+#top .top-right .msg ul{
+	right:130px;
+	width:200px;
+}
+#top .top-right li:hover ul{
+	display:block;
+}
+#top .top-right li a:hover{
+	color:var(--color0);
+}
+#top .top-right li ul li,#top .top-right li ul li a{
+	width:100%;
+	height: 40px;
+	line-height: 40px;
+	text-align:left;
+	padding:0 5px;
+	border-bottom: 1px solid #eeeeee;
+}
+#top .top-right li ul li a:hover{
+	border-bottom: 1px solid var(--color0);
+}
+/**********left菜单栏css***********/
+#nav{
+	position:fixed;
+	z-index:9;
+	top:50px;
+	left:0;
+	width:150px;
+	height:100%;
+	padding-top:20px;
+	background:#1c2b36;/*原色-#3a4651*/
+}
+#nav ul li a{
+	padding:0 10px;
+}
+/*nav菜单列表css*/
+#nav,#nav a{
+	color:rgba(255, 255, 255, 0.5);
+}
+#nav i{
+	height:50px;
+	line-height:50px;
+}/*下拉图标样式*/
+#nav>ul>li>a{
+	font-size:15px;
+}
+#nav>ul>li>ul>li>a{
+	font-size:14px;
+}
+#nav>ul>.active>a{
+	background: var(--color0);
+	color:white;
+}/*主菜单点击后背景色*/
+#nav>ul>li:not(.active)>a:hover{
+	background: rgba(0,0,0,0.4);
+	color:var(--color0);
+}/*主菜单鼠标经过背景色和字体色*/
+#nav ul li ul{
+	display:none;
+}
+#nav ul li a,#nav ul li ul li a{
+	display:inline-block;
+	width:100%;
+	height:50px;
+	line-height:50px;
+}
+#nav ul li ul li a{
+	padding-left:20px;
+	background: rgba(0,0,0,0.3);
+}/*子菜单*/
+#nav ul li ul li a:hover{
+	background: rgba(0,0,0,0.4);
+	color:var(--color0);	
+}/*子菜单点击后背景色和字体颜色*/
+/***********main主体内容栏***********/
+#main{
+	padding:60px 20px 0px 170px;
+	width:100%;
+	color:#797979;
+}
+#main .content{
+	background:white;
+}
+#main input:focus,#main textarea:focus{
+	border:1px solid var(--color0);
+}
+#main button{
+	background:var(--color0);
+	color:white;
+}
+#main input[type="checkbox"]{
+	height:18px;
+	width:18px;
+}
+/***数据列表***/
+#main .list{
+	padding:15px;
+}
+#main .list .oper{
+	padding-bottom:10px;
+	border-bottom:1px dotted #d8d8d8;
+}
+#main .list .oper>.search{
+	display:inline-block;
+	width:300px;
+}
+#main .list .oper>a,#main .list .oper>select{
+	background:var(--color0);
+	color:white;
+}
+#main .list table{
+	margin-top:10px;
+}
+#main .list .page{
+	float:right;
+}
+/***数据编写***/
+#main .data input,#main .data button{
+	height:40px;
+}
+#main .data .view_notice:hover{
+	color:red;
+}
+#main .data .file{
+    position: relative;
+    display: inline-block;
+    background: #D0EEFF;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+}
+#main .data .file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+#main .data .file:hover{
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
+}
+#main .data .time_sign,#main .data .eidt_note{
+	color:red;
+}
+/***********footer底部栏***********/
+#footer{
+	width:100%;
+	height:50px;
+	line-height:50px;
+	text-align:center;
+}

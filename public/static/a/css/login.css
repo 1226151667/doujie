@@ -1,0 +1,73 @@
+*{
+	font-size:14px;
+	font-family: "微软雅黑","黑体","宋体";
+}
+body{
+	background:url(../images/login_bg.jpg)  center fixed;
+}
+.login_box{
+	width:350px;
+	height:auto;
+	margin:auto;
+	text-align:center;
+	margin-top:200px;
+	color:#ffffff;
+}
+.login_box h3{
+	height:70px;
+	line-height:70px;
+}
+.login_box .notice{
+	display:block;
+	width:100%;
+	height:30px;
+	background:rgba(0,0,0,0.35);
+	border-radius:15px;
+	line-height:30px;
+	color:#e84b4b;
+	text-align:left;
+	padding-left:15px;
+	font-size:15px;
+	display: none;
+}
+.login_box form{
+	margin-top:5px;
+}
+.login_box input{
+	color:#ffffff;
+}
+.login_box .form-group{
+	position:relative;
+	height:60px;
+}
+.login_box .form-group i{
+	position:absolute;
+	left:0;
+	top:0;
+	height:46px;
+	line-height:46px;
+	width:56px;
+	text-align:center;
+	font-size:24px;
+	color:rgba(255,255,255,0.6);
+}
+.login_box input,.login_box button{
+	width:100%;
+}
+.login_box input{
+	background:none;
+	border:rgba(255,255,255,0.2) 2px solid !important;
+	height:46px;
+	border-radius:23px;
+	line-height:46px;
+	padding-left:46px;
+}
+.login_box button{
+	background:#0096e6;
+	text-align: center;
+	font-size: 20px;
+	height:50px;
+	border:none;
+	border-radius:25px;
+	line-height:50px;
+}
