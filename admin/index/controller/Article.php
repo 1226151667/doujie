@@ -13,7 +13,7 @@ class Article extends Start{
         $list = $Article->alias("a")->field("a.*,c.name category_name,att.file_path pic_path")
         		->join('attachment att','att.id=a.pic_id','LEFT')
         		->join('category c','c.id=a.category_id','LEFT')
-        		->where($s_w['where'])->paginate(10);
+        		->where($s_w['where'])->order("a.create_time desc")->paginate(10);
         return $this->fetch('index', ['list'=>$list, 'category_list'=>$category_list, 'search'=>$s_w['search'], 'empty'=>'<tr><td>没有数据</td></tr>']);
 	}
 	public function category(){

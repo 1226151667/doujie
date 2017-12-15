@@ -9,7 +9,7 @@ class Slider extends Start{
         $list = $Slider->alias("s")->field("s.*,att.file_path pic_path,at.file_path backpic_path")
         		->join('attachment at','at.id=s.backpic_id','LEFT')
         		->join('attachment att','att.id=s.pic_id','LEFT')
-        		->order('sort')->paginate(10);
+        		->order('s.sort')->paginate(10);
         return $this->fetch('index', ['list'=>$list, 'empty'=>'<tr><td>没有数据</td></tr>']);
 	}
 	public function edit_slider($id=0){

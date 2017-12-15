@@ -19,7 +19,7 @@ class Cases extends Start{
         		->join('attachment at','at.id=c.pic_id','LEFT')
         		->join('attachment att','att.id=c.w730h730pic_id','LEFT')
         		->join('attachment attt','attt.id=c.w730h1004pic_id','LEFT')
-        		->where("c.type='{$type}'")->paginate(10);
+        		->where("c.type='{$type}'")->order("c.create_time desc")->paginate(10);
         return $this->fetch('show', ['list'=>$list, 'type'=>$type, 'page_title'=>$page_title, 'empty'=>'<tr><td>没有数据</td></tr>']);
 	}
 	public function edit_cases($type,$id=0){
@@ -51,7 +51,7 @@ class Cases extends Start{
 	public function customer(){
         $Customer = new Customer();
         $list = $Customer->alias("c")->field("c.*,att.file_path logo_path")
-        		->join('attachment att','att.id=c.logo_id','LEFT')
+        		->join('attachment att','att.id=c.logo_id','LEFT')->order("c.create_time desc")
         		->paginate(10);
         return $this->fetch('customer', ['list'=>$list, 'empty'=>'<tr><td>没有数据</td></tr>']);
 	}
