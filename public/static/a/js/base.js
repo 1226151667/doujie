@@ -151,7 +151,7 @@ $(function(){
 							content: data[1],
 							yes:function(index,layero){
 								layer.close(index);
-								window.location.reload();
+								window.location.href =  window.location.pathname;
 							}
 						});     
 						  
