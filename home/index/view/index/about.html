@@ -62,14 +62,14 @@
 </div>
 {include file="public/inter" /}
 {include file="public/footer" /}
+<script src="/static/h/js/jquery-1.9.1.min.js" ></script>
+<script src="/static/h/js/nprogress.js" ></script>
 <script src="/static/h/js/public.js"></script>
-</body>
 <script src="/static/h/js/particles.min.js"></script>
 <script src="/static/h/js/app.js"></script>
 <script src="/static/h/js/jquery.hoverdir.js"></script>
 <script>
     $('#da-thumbs > li').hoverdir();
-
     $('.down_btn').bind('click', function(event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
@@ -78,4 +78,5 @@
         event.preventDefault();
     });
 </script>
+</body>
 </html>
