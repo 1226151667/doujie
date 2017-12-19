@@ -341,3 +341,7 @@ canvas {
 	.dm_news>h3{font-size:28px;letter-spacing:5px;}
 	.dm_news>h6 {font-size: 14px;margin: 10px 0 30px 0;}
 	}
+
+.noscroll-bg{
+	background-image:url(/static/h/images/indexbg.jpg);
+}
