@@ -26,7 +26,17 @@
             <p><br/></p>
             <p><br/></p>
             <div class="newsshare">
-                <span>分享至：</span><div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+                <span>分享至：</span>
+                <div class="bdsharebuttonbox" data-tag="share_1">
+                    <a class="bds_mshare" data-cmd="mshare"></a>
+                    <a class="bds_qzone" data-cmd="qzone" href="#"></a>
+                    <a class="bds_tsina" data-cmd="tsina"></a>
+                    <a class="bds_baidu" data-cmd="baidu"></a>
+                    <a class="bds_renren" data-cmd="renren"></a>
+                    <a class="bds_tqq" data-cmd="tqq"></a>
+                    <a class="bds_more" data-cmd="more">更多</a>
+                    <a class="bds_count" data-cmd="count"></a>
+                </div>
             </div>
         </div>
         <div class="relatedList clearfix">
@@ -62,5 +72,23 @@
 <script src="/static/h/js/jquery-1.9.1.min.js"></script>
 <script src="/static/h/js/nprogress.js"></script>
 <script src="/static/h/js/public.js"></script>
+<script>
+    var host = window.location.host
+    window._bd_share_config = {
+        common : {
+            bdText : '{$info.title}', 
+            bdDesc : '{$info.description}', 
+            bdUrl : host+"{:url('/new_detail_1'.$info.id)}",   
+            bdPic : host+"{$info.pic_path}"
+        },
+        share : [{
+            "bdSize" : 16
+        }],
+        selectShare : [{
+            "bdselectMiniList" : ['qzone','tqq','kaixin001','bdxc','tqf']
+        }]
+    }
+    with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
 </body>
 </html>

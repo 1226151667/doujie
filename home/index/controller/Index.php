@@ -128,7 +128,9 @@ class Index extends Controller{
 		$category_list = $Category->order('sort')->select();
 		$Article = new Article();
 		$Article->where("id={$id}")->setInc('view_num');
-		$info = $Article->find($id);
+		$info = $Article->alias("a")->field("
+					a.*,att.file_path as pic_path
+    			")->join('attachment att','att.id=a.pic_id','LEFT')->find($id);
 		$previous_id = $Article->field("id")->where("id<{$id} and category_id={$info['category_id']}")->order('id desc')->find();
 		$next_id = $Article->field("id")->where("id>{$id} and category_id={$info['category_id']}")->order('id')->find();
 		$article_about = $Article->alias("a")->field("a.*,att.file_path as pic_path")
