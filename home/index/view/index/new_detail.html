@@ -73,12 +73,12 @@
 <script src="/static/h/js/nprogress.js"></script>
 <script src="/static/h/js/public.js"></script>
 <script>
-    var host = window.location.host
+    var host = window.location.host;
     window._bd_share_config = {
         common : {
             bdText : '{$info.title}', 
             bdDesc : '{$info.description}', 
-            bdUrl : host+"{:url('/new_detail_1'.$info.id)}",   
+            bdUrl : host+'/new_detail_1'+'{$info.id)}',   
             bdPic : host+"{$info.pic_path}"
         },
         share : [{
