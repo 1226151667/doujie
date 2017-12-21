@@ -242,8 +242,8 @@ return [
 
     'http_exception_template'    =>  [  
         // 定义404错误的重定向页面地址  
-        404 =>  APP_PATH.'/error_page/404.html',  
+        404 =>  '/error_page/404.html',  
         // 还可以定义其它的HTTP status  
-        401 =>  APP_PATH.'/error_page/404.html',  
+        401 =>  '/error_page/404.html',  
     ],  
 ];
