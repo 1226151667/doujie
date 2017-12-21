@@ -28,3 +28,6 @@ Route::rule('new_detail_1<id>', 'index/Index/new_detail', 'GET',[], ['id'=>'\d+'
 
 Route::rule('cases_t<type?>', 'index/Index/cases', 'GET',[], ['type'=>'\w+']);
 Route::rule('case_detail_1<id>', 'index/Index/case_detail', 'GET',[], ['id'=>'\d+']);
+
+Route::rule('error_page/:state', 'index/Index/error_page', 'GET',[], ['state'=>'.*?']);
+
