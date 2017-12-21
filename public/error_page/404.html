@@ -1,5 +1,4 @@
-{__NOLAYOUT__}
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en-US"> 
 <head>
     <meta charset="UTF-8">
@@ -9,9 +8,8 @@
     <meta name="keywords" content="{$website.keyword}" />
     <meta name="description" content="{$website.description}" />
     <meta name="author" content="doujie" />
-    <!-- 网页ico图标设置 -->
     <link rel="icon" type="image/ico" href="{$website.icon_path}">
-    <!-- {$website.script_head} -->
+    {$website.script_head}
 <style>
 a,a:hover{text-decoration:none;color:#3c3c3c;}
 .footer{margin:auto;text-align:center;font-size:14px;width:500px}
@@ -62,9 +60,17 @@ a,a:hover{text-decoration:none;color:#3c3c3c;}
     <h1><img alt="404图片" src="/static/h/images/404-error.png"></h1>
     <h2>没有找到页面</h2>
     <h3>网站小哥不知道又跑哪偷懒去了</h3>
-    <a class="back-btn" href="/">返回首页</a>
+    <a class="back-btn" href="{:url('/')}">返回首页</a>
 </section>
-<!-- {include file="public/footer" /} -->
+{include file="public/footer" /}
+</body>
+</html>-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>404</title>
+</head>
+<body>
+<h1>404</h1>
 </body>
 </html>
-{__NOLAYOUT__}
