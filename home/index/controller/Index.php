@@ -147,8 +147,8 @@ class Index extends Controller{
 			'website' => $GLOBALS['website']
 		]);
 	}
-	public function error_page($state){
-		return $this->fetch("error/{$state}",[
+	public function error_400(){
+		return $this->fetch("error/404}",[
 			'website' => $GLOBALS['website']
 		]);
 	}
