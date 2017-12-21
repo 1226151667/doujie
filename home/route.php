@@ -28,7 +28,3 @@ Route::rule('new_detail_1<id>', 'index/Index/new_detail', 'GET',[], ['id'=>'\d+'
 
 Route::rule('cases_t<type?>', 'index/Index/cases', 'GET',[], ['type'=>'\w+']);
 Route::rule('case_detail_1<id>', 'index/Index/case_detail', 'GET',[], ['id'=>'\d+']);
-
-//创建MISS路由,当前URL访问失效时,自动调用该路由
-Route::miss('error_page');  
-
