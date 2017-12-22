@@ -239,4 +239,8 @@ return [
         'var_page'  => 'page',
         'list_rows' => 15,
     ],
+    'http_exception_template'=> [    
+        404 =>  APP_PATH.'404.html',    
+        500 =>  APP_PATH.'500.html',    
+    ],
 ];

@@ -73,6 +73,9 @@ class Index extends Controller{
 			->join('attachment at','at.id=c.ewm_id','LEFT')
 			->join('attachment att','att.id=c.pic_id','LEFT')
 			->find($id);
+		if(!$info){
+			throw new \think\exception\HttpException(404);
+		}
 		$previous_id = $Cases->field("id")->where("id<{$id} and type='{$info['type']}'")->order('id desc')->find();
 		$next_id = $Cases->field("id")->where("id>{$id} and type='{$info['type']}'")->order('id')->find();
 		return $this->fetch('case_detail', [
@@ -129,6 +132,9 @@ class Index extends Controller{
 		$Article = new Article();
 		$Article->where("id={$id}")->setInc('view_num');
 		$info = $Article->alias("a")->field("a.*,att.file_path as pic_path")->join('attachment att','att.id=a.pic_id','LEFT')->find($id);
+		if(!$info){
+			throw new \think\exception\HttpException(404);
+		}
 		$previous_id = $Article->field("id")->where("id<{$id} and category_id={$info['category_id']}")->order('id desc')->find();
 		$next_id = $Article->field("id")->where("id>{$id} and category_id={$info['category_id']}")->order('id')->find();
 		$article_about = $Article->alias("a")->field("a.*,att.file_path as pic_path")
@@ -144,11 +150,6 @@ class Index extends Controller{
 	}
 	public function service(){
 		return $this->fetch('service',[
-			'website' => $GLOBALS['website']
-		]);
-	}
-	public function error_page(){
-		return $this->fetch("error/404}",[
 			'website' => $GLOBALS['website']
 		]);
 	}
