@@ -6,14 +6,19 @@ use app\index\model\Website;
 class Nolapi extends Controller{
 	public function login_status(){
 		if(!session('?empuser_uname') || !session('?empuser_id')){
-			// return {'status':'no', 'error': 'no login'};
-			return 2222;
+			return json_encode(['status'=>'no', 'error'=>'no login']);
 		}		
 		$Website = new Website();
 		$website_info = $Website->alias('w')->field("at.file_path icon_path,att.file_path logo_path")
 			->join('attachment at','at.id=w.icon_id','LEFT')
 			->join('attachment att','att.id=w.logo_id','LEFT')
 			->find();
-		return 1111;
+		return json_encode(['status'=>'ok', 'data'=>[
+				'empuser_id'=>session('empuser_id'), 
+				'empuser_uname'=>session('empuser_uname'),
+				'icon_path'=>$website_info['icon_path'],
+				'logo_path'=>$website_info['logo_path']
+			]
+		]);
 	}
 }
