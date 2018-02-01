@@ -7,7 +7,7 @@ class Nolapi extends Controller{
 	public function login_status(){
 		$callback = request()->get('callback');
 		if(!session('?empuser_uname') || !session('?empuser_id')){
-			return $callback+'(100)';
+			echo $callback+'(100)';exit;
 			// return json_encode(['status'=>'no', 'error'=>'no login']);
 		}		
 		$Website = new Website();
@@ -15,7 +15,7 @@ class Nolapi extends Controller{
 			->join('attachment at','at.id=w.icon_id','LEFT')
 			->join('attachment att','att.id=w.logo_id','LEFT')
 			->find();
-		return $callback;
+		echo $callback+'(100)';exit;
 		return json_encode(['status'=>'ok', 'data'=>[
 				'empuser_id'=>session('empuser_id'), 
 				'empuser_uname'=>session('empuser_uname'),
