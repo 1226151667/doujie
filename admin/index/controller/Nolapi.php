@@ -7,7 +7,7 @@ class Nolapi extends Controller{
 	public function login_status(){
 		$callback = request()->get('callback');
 		if(!session('?empuser_uname') || !session('?empuser_id')){
-			return $callback;
+			return $callback+'(100)';
 			// return json_encode(['status'=>'no', 'error'=>'no login']);
 		}		
 		$Website = new Website();
