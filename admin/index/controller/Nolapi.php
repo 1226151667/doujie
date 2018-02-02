@@ -9,6 +9,6 @@ class Nolapi extends Controller{
 		if(!session('?empuser_uname') || !session('?empuser_id')){
 			echo $callback.'(100)';exit;
 		}		
-		echo $callback.'(101)';
+		echo $callback.'(101)';exit;
 	}
 }
