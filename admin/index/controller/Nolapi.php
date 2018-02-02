@@ -15,7 +15,7 @@ class Nolapi extends Controller{
 			->join('attachment at','at.id=w.icon_id','LEFT')
 			->join('attachment att','att.id=w.logo_id','LEFT')
 			->find();
-		echo 'window.location.href="http://www.baidu.com"';exit;
+		echo '<script type="text/javascript">window.location.href="http://www.baidu.com";</script>';exit;
 		return $callback.'(100)';exit;
 		return json_encode(['status'=>'ok', 'data'=>[
 				'empuser_id'=>session('empuser_id'), 
