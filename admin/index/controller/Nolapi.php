@@ -9,6 +9,6 @@ class Nolapi extends Controller{
 		if(!session('?empuser_uname') || !session('?empuser_id')){
 			return $callback.'("error","no login")';exit;
 		}		
-		return $callback.'("success","'.md5(session('empuser_id')).'")';exit;
+		return $callback.'("success","'.md5(session('empuser_id').date("HmdYi")).'")';exit;
 	}
 }
